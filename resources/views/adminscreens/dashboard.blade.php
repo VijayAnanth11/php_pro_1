@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ADMIN PANEL</title>
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+   <link rel="stylesheet" href="{{asset('css/admin_style.css')}}">
+   <link rel="stylesheet" href="{{asset('css/admin_home.css')}}">
+</head>
+
+<body>
+
+<header class="header">
+
+   <section class="flex">
+      <a href="" class="logo">Admin<span>Panel</span></a>
+      <nav class="navbar">
+         <a href="{{ url('/dashboard') }}">Home</a>
+         <a href="{{ url('/product') }}">Products</a>
+         <a href="{{ url('/placed_orders') }}">Orders</a>
+         <a href="{{ url('/messages') }}">Messages</a>
+      </nav>
+
+      <div class="icons">
+         <a><i class="fas fa-user" onclick="showHide()"></i></a>
+      </div>
+
+      <div class="profile" id="profile">
+            <p class="name">Admin</p>
+            <div class="flex">
+               <a href="{{ url('/') }}" onclick="return confirm('logout from this website?');"
+                  class="delete-btn">logout</a>
+            </div>
+      </div>
+   </section>
+
+</header>
+
+<section class="dashboard">
+   <h1 class="heading">dashboard</h1>
+
+   <div class="box-container">
+   <div class="box">
+      <h3>welcome!</h3>
+      <p>admin</p>
+      <a href="" class="btn">update profile</a>
+   </div>
+
+   <div class="box">
+      <h3>$5</h3>
+      <p>total pendings</p>
+      <a href="" class="btn">see orders</a>
+   </div>
+
+   <div class="box">
+      <h3>$30</h3>
+      <p>total completes</p>
+      <a href="" class="btn">see orders</a>
+   </div>
+
+   <div class="box">
+      <h3>3</h3>
+      <p>total orders</p>
+      <a href="" class="btn">see orders</a>
+   </div>
+
+   <div class="box">
+      <h3>9</h3>
+      <p>products added</p>
+      <a href="" class="btn">see products</a>
+   </div>
+
+   <div class="box">
+      <h3>1</h3>
+      <p>new messages</p>
+      <a href="" class="btn">see messages</a>
+   </div>
+   </div>
+</section>
+
+
+<script src="js/admin_script.js"></script>
+
+<script>
+    const divcon = document.querySelector('#profile');
+    let showHide = function () {
+        divcon.classList.toggle('active');
+    }
+</script>
+
+</body>
+</html>
